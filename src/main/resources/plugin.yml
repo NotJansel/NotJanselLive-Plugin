@@ -1,0 +1,17 @@
+name: Wolfkarst.de-Plugin
+version: ${project.version}
+main: de.notjansel.wolfkarstplugin.Main
+api-version: 1.17
+authors: [ NotJansel ]
+description: Plugin, extra für den Wolfkarst.de Server geschrieben
+website: https://twitch.tv/notjansel
+
+commands:
+  live:
+    usage: /live
+  offline:
+    usage: /offline
+  record:
+    usage: /record
+  finishrecord:
+    usage: /finishrecord
