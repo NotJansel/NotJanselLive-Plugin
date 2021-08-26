@@ -1,6 +1,6 @@
-package de.notjansel.wolfkarstplugin.commands;
+package de.notjansel.notjansellive.commands;
 
-import de.notjansel.wolfkarstplugin.Main;
+import de.notjansel.notjansellive.Main;
 import dev.jcsoftware.jscoreboards.JGlobalScoreboard;
 import dev.jcsoftware.jscoreboards.JScoreboardTeam;
 import org.bukkit.command.Command;
@@ -9,22 +9,17 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class OfflineCommand implements CommandExecutor {
-
+public class FinishrecordCommand implements CommandExecutor {
     private JScoreboardTeam team;
-    private JGlobalScoreboard scoreboard;
+    private JGlobalScoreboard scoreboard = Main.getInstance().getScoreBoard();
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        scoreboard = Main.getInstance().getScoreBoard();
-
-        team = scoreboard.getTeams().get(0);
-
+        //Get the Record Team
+        team = scoreboard.getTeams().get(1);
+        //Remove Player from the recording team
         team.removePlayer((Player) sender);
-
-        sender.sendMessage("Du bist nun nicht mehr im Live-Team!");
-
-
+        sender.sendMessage("You left the 'Record'-Team!");
         return true;
     }
 }

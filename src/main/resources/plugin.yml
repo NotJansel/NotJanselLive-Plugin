@@ -1,9 +1,9 @@
-name: Wolfkarst.de-Plugin
-version: ${project.version}
-main: de.notjansel.wolfkarstplugin.Main
+name: NotJanselLive
+version: infdev
+main: de.notjansel.notjansellive.Main
 api-version: 1.17
 authors: [ NotJansel ]
-description: Plugin, extra für den Wolfkarst.de Server geschrieben
+description: Plugin, written for a Server, which name should not be called
 website: https://twitch.tv/notjansel
 
 commands:
@@ -15,3 +15,16 @@ commands:
     usage: /record
   finishrecord:
     usage: /finishrecord
+  servertps:
+    usage: /servertps
+  configreload:
+    usage: /configreload
+    permission: notjansellive.reload
+
+permissions:
+  notjansellive.*:
+    description: Access to every Plugin-command which needs a permission
+    children:
+      notjansellive.reload: true
+  notjansellive.reload:
+    description: Access to the Reload command

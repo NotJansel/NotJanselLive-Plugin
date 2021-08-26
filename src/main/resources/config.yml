@@ -1,0 +1,18 @@
+################################################
+#   Welcome! This is the configuration file.   #
+#   Please if I update some things, remove     #
+#   this file, as I could add things to this.  #
+#                                              #
+#   To use the old configured things, mane a   #
+#   Backup of this file and transfer any args  #
+#   to the new file by Copy-Paste.             #
+################################################
+plugin:
+  join-quit-enabled: true
+  # for the playername to be inserted, please set the %s somewhere, otherwise the plugin crashes
+  join-message: ">>>&a %s joined the game"
+  quit-message: "<<<&a %s left the game"
+  reload-message: "&2Config was reloaded"
+  death-messages:
+    - "%s was suprised how he died..."
+    - "As it seems, %s has not thought about this..."

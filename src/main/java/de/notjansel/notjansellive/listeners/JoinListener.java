@@ -1,6 +1,6 @@
-package de.notjansel.wolfkarstplugin.listeners;
+package de.notjansel.notjansellive.listeners;
 
-import de.notjansel.wolfkarstplugin.Main;
+import de.notjansel.notjansellive.Main;
 import dev.jcsoftware.jscoreboards.JGlobalScoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,11 +15,15 @@ public class JoinListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
-        event.setJoinMessage(">>> " + ChatColor.AQUA + player.getName() + " hat den Server betreten");
-        Bukkit.getConsoleSender().sendMessage(">>> " + player.getName() + " hat den Server betreten");
+        String orig = Main.getInstance().getConfig().getString("plugin.join-message");
+        String joinmessage = String.format(orig, player.getName());
+        if (Main.getInstance().getConfig().getBoolean("plugin.join-quit-enabled")) {
+            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', joinmessage));
+        }
         Bukkit.getOnlinePlayers().forEach(this::addToScoreboard);
         player.setScoreboard(Bukkit.getScoreboardManager().getMainScoreboard());
     }
+
 
     private void addToScoreboard(Player player) {
         scoreboard.addPlayer(player);
