@@ -13,6 +13,8 @@ public class DeathListener implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
 
+        if (!Main.getInstance().getConfig().getBoolean("plugin.deathmsg-enabled")) { return; }
+
         Random r = new Random();
         int randomitem = r.nextInt(Main.getInstance().getConfig().getList("plugin.death-messages").size());
         String randomdeathmessage = Main.getInstance().getConfig().getList("plugin.death-messages").get(randomitem).toString();

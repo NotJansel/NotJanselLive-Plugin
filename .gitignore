@@ -19,3 +19,10 @@
 /target/LivePlugin-beta.jar
 /.idea/discord.xml
 /target/original-LivePlugin-beta.jar
+/.idea/.gitignore
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml

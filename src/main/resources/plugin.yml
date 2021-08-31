@@ -1,5 +1,5 @@
 name: NotJanselLive
-version: infdev
+version: 21w35a
 main: de.notjansel.notjansellive.Main
 api-version: 1.17
 authors: [ NotJansel ]

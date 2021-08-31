@@ -16,3 +16,4 @@ plugin:
   death-messages:
     - "%s was suprised how he died..."
     - "As it seems, %s has not thought about this..."
+  deathmsg-enabled: true
