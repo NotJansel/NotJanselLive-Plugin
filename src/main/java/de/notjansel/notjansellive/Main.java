@@ -21,16 +21,17 @@ public final class Main extends JavaPlugin {
     private static Main instance;
     private JGlobalScoreboard scoreboard;
     private JScoreboardTeam team;
+    private Runtime.Version version = Runtime.version();
 
     @Override
     public void onLoad(){
         instance = this;
         Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "Loading NotJanselLive...");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "Please make sure, that your PC runs Java 16 or higher...");
     }
 
     @Override
     public void onEnable() {
+        Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE + "Creating the necessary Scoreboard, Teams and Commands...");
         //Create Scoreboard
         scoreboard = new JGlobalScoreboard(
                 () -> {
@@ -57,6 +58,7 @@ public final class Main extends JavaPlugin {
         getCommand("finishrecord").setExecutor(new FinishrecordCommand());
         getCommand("servertps").setExecutor(new ServerTpsCommand());
         getCommand("configreload").setExecutor(new ReloadConfigCommand());
+        Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE + "Created and loaded everything. Plugin loaded successfully.\n\n\n\n\n");
         //Final message when plugin loaded successfully
         Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "====================================================");
         Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "|                                                  |");

@@ -6,7 +6,7 @@
 
     <groupId>de.notjansel.notjansellive</groupId>
     <artifactId>LivePlugin</artifactId>
-    <version>1.0</version>
+    <version>beta</version>
     <packaging>jar</packaging>
 
     <name>NotJanselLive</name>
