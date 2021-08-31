@@ -16,3 +16,6 @@
 /target/classes/de/notjansel/notjansellive/commands/RecordCommand.class
 /target/classes/de/notjansel/notjansellive/commands/ReloadConfigCommand.class
 /target/classes/de/notjansel/notjansellive/commands/ServerTpsCommand.class
+/target/LivePlugin-beta.jar
+/.idea/discord.xml
+/target/original-LivePlugin-beta.jar
